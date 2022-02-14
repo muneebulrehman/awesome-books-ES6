@@ -1,4 +1,3 @@
-const dateEl = document.querySelector('.date');
 const footer = document.querySelector('footer');
 const allSections = document.querySelectorAll('.all');
 const navBar = document.querySelector('.nav-ul');
@@ -23,20 +22,3 @@ navBar.addEventListener('click', (e) => {
     findHight();
   }
 });
-
-function setDate() {
-  const date = new Date();
-  const obj = {
-    year: 'numeric',
-    month: 'long',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true,
-  };
-  const formatedDate = Intl.DateTimeFormat([], obj).format(date);
-  dateEl.textContent = formatedDate;
-}
-
-setInterval(setDate, 1000);
